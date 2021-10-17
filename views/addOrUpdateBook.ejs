@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.rawgit.com/tonystar/bootstrap-float-label/v4.0.2/bootstrap-float-label.min.css"/>
+    <link rel="stylesheet" href="/pagedesginStyles.css">
+    <link rel="stylesheet" href="/logintSyle.css">
+    <link rel="stylesheet" href="/signUpStyle.css">
+
+    
+    <title><%= pageTitle %> </title>
+</head>
+<body>
+  <%- include('./partials/navbar')  %>
+
+    <div class="container marginTop marginBottomReduce minHeight mb-5" >
+        <div class="row justify-content-center">
+            <div class="col-md-12 col-8 " style="z-index: 100;">
+              <form action="<%= path %> " method="POST" enctype="multipart/form-data" name="addNewBookForm" id="addNewBookForm"> 
+                <main>
+                  
+                    <div class="stepper">
+                      <div class="step--1 step-active">Step 1</div>
+                      <div class="step--2">Step 2</div>
+                      <div class="step--3">Step 3</div>
+                      <div class="step--4">Step 4</div>
+                      <div class="step--5">Step 5</div>
+                      <div class="step--6">Finish</div> 
+                    </div>
+                
+                    <div class="form form-active">
+                      <div class="form--header-container">
+                        <h1 class="form--header-title">
+                          <%= pageTitle %>  <i  class="fas fa-book"></i>
+                        </h1>
+              
+                        <p class="form--header-text">
+                          Enter Book Name.
+                        </p>
+                      </div>
+                      <!-- <input type="text" placeholder="Username" /> -->
+                      <label class="form-group has-float-label">
+                        <div class="errorMsg hidden" id="bookNameError"></div>
+                        <input class="form-control" type="text" name="bookName" id="bookName" placeholder=" Book Name" <% if (editing) { %>
+                         value="<%= book.title %> "
+                        <% } %> required/>
+                        <span class="pushRight">Book Name</span>
+                      </label>
+                      
+                      
+                      <button class="form__btn" id="btn-1">Next</button>
+                    </div>
+                    <div class="form">
+                      <div class="form--header-container">
+                        <h1 class="form--header-title">
+                            <%= pageTitle %>  <i  class="fas fa-book"></i>
+                        </h1>
+              
+                        <p class="form--header-text">
+                          Enter Author's Name
+                        </p>
+                      </div>
+              
+                      
+                      <label class="form-group has-float-label">
+                        <div class="errorMsg hidden" id="authorError"></div>
+                        <input class="form-control" type="text" id="author" name="author" placeholder="Author" <% if (editing) { %>
+                         value="<%= book.author %> "
+                        <% } %> required/>
+                        <span class="pushRight">Author</span>
+                      </label>
+                      
+                      <button class="form__btn" id="btn-2-prev">Previous</button>
+                      <button class="form__btn" id="btn-2-next">Next</button>
+                    </div>
+                    <div class="form">
+                      <div class="form--header-container">
+                        <h1 class="form--header-title">
+                            <%= pageTitle %>  <i  class="fas fa-book"></i>
+                        </h1>
+              
+                        <p class="form--header-text">
+                          Enter Genre of Book
+                        </p>
+                      </div>
+              
+                      <label class="form-group has-float-label">
+                        <div class="errorMsg hidden" id="genreError"></div>
+                        <input class="form-control" type="text" id="genre" name="genre" placeholder="Genre" <% if (editing) { %>
+                          value="<%= book.genre %> "
+                         <% } %> required/>
+                        <span class="pushRight">Genre</span>
+                        
+                      </label>
+                      
+                      
+                      
+                      <button class="form__btn" id="btn-3-prev">Previous</button>
+                      <button class="form__btn" id="btn-3-next">Next</button>
+                    </div>
+                    <div class="form">
+                      <div class="form--header-container">
+                        <h1 class="form--header-title">
+                            <%= pageTitle %>  <i  class="fas fa-book"></i>
+                        </h1>
+              
+                        <p class="form--header-text">
+                          Upload Author's Picture
+                        </p>
+                      </div>
+              
+                      <label class="form-group ">
+                        <div class="errorMsg hidden" id="authorpicError"></div>
+                        <input class="form-control" type="file" id="authorpic" name="authorpic" placeholder="author Pic" accept="image/*" required/>
+                        
+                      </label>
+                      
+                        <div ><img id="preview" style="height: 100px;width: 100px;" src="" alt=""></div>
+                      
+                      <button class="form__btn" id="btn-4-prev">Previous</button>
+                      <button class="form__btn" id="btn-4-next">Next</button>
+                    </div>
+                    <div class="form">
+                      <div class="form--header-container">
+                        <h1 class="form--header-title">
+                            <%= pageTitle %>  <i  class="fas fa-book"></i>
+                        </h1>
+              
+                        <p class="form--header-text">
+                          Summary About Book
+                        </p>
+                      </div>
+              
+                      <label class="form-group has-float-label">
+                        <div class="errorMsg hidden" id="aboutError"></div>
+                        <input class="form-control" type="text" id="about" name="about" placeholder="About" <% if (editing) { %>
+                          value="<%= book.about %> "
+                         <% } %> required/>
+                        <span class="pushRight">About</span>
+                      </label>
+                      
+                      
+                      <button class="form__btn" id="btn-5-prev">Previous</button>
+                      <button class="form__btn" id="signUpBtn"><%= pageTitle %> </button>
+                    </div>
+                    <div style="display: none;" id="serverMessage"><% if (editing) { %>
+                     Book Data is Updated successfully.
+                    <% } else {%>
+                      New book is Added Successfully 
+                      <%  } %>
+                      </div>
+                    <div class="form--message"></div>
+
+                  
+                  </main>
+                </form>
+            </div>
+
+        </div>
+    </div>
+    <div id="particles-js">
+
+    </div>
+
+    
+    <!-- <%- include('./partials/footer')  %> -->
+    
+
+    
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+
+
+     <!-- particle.js files -->
+    <!-- <script src="/particles.js"></script>
+    <script src="/app.js"></script> -->
+
+    <!-- <script src="/pagedesignAnimations.js"></script> -->
+    <script src="/addNewBookFormValidation.js"></script>
+    
+    <script src="/addNewBookStepperForm.js"></script>
+
+    <script>
+        $(document).ready(function(){
+            $('#preview').hide();
+        })
+        $('#authorpic').on('change',function(e){
+            const file=this.files[0];
+            const fileReader=new FileReader();
+            if(file){
+                fileReader.readAsDataURL(file);
+            }
+            fileReader.addEventListener('load',function(e){
+                $('#preview').attr('src',fileReader.result);
+                $('#preview').show();
+            },false);
+        })
+    </script>
+</body>
+</html>

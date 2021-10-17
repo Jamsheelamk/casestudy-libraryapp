@@ -1,0 +1,146 @@
+:root{
+    --themeColor:linear-gradient(to right, rgb(64, 2, 207), #8b0297);
+}
+.form{
+    position: absolute;
+    top:100px !important;
+}
+.stepper {
+    width: 30rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 5%;
+  }
+  
+  .step--1,
+  .step--2,
+  .step--3,
+  .step--5,
+  .step--6,
+  .step--4 {
+    width: 5rem;
+    padding: 0.5rem 0;
+    background: #fff;
+    color: rgb(76, 26, 192);
+    text-align: center;
+  }
+  .step--1,
+  .step--2,
+  .step--4,
+  .step--5,
+  .step--3 {
+    border-right: 1px solid rgb(122, 16, 209);
+  }
+  .step-active {
+    background:var(--themeColor);
+    color: #fff;
+    border: 1px solid rgb(126, 2, 143);
+  }
+
+  @media (max-width:576px){
+      .stepper{
+          width: 24rem;
+      }
+        .step--1,
+        .step--2,
+        .step--3,
+        .step--5,
+        .step--6,
+        .step--4 {
+            width: 4rem;
+    }
+  }
+
+  input[type='email'] {
+    padding: 0.8rem;
+    margin: auto;
+    margin-top: 0.5rem;
+    width: 20rem;
+    display: block;
+    border-radius: 0.5rem;
+    outline: none;
+    border: 1px solid #5003cc;
+  }
+  input[type='date'] {
+    padding: 0.8rem;
+    margin: auto;
+    margin-top: 0.5rem;
+    width: 20rem;
+    display: block;
+    border-radius: 0.5rem;
+    outline: none;
+    border: 1px solid #5003cc;
+  }
+  input[type='radio'] {
+    padding: 0.8rem;
+    margin: auto;
+    margin-top: 0.5rem;
+    
+    
+    border: 1px solid #5003cc;
+  }
+  input#address{
+      height: 5rem;
+  }
+  input#about{
+      height: 5rem;
+  }
+  #genderGroup{
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      /* border: 1px solid #5003cc; */
+  }
+  .violet{
+      color:#5003cc ;
+      font-weight: bold;
+  }
+
+  .errorMsg{
+    position: absolute;
+    top:-50%;
+    left:2%;
+    width:90%;
+    padding: 0.5% 5%;
+    background-color: rgba(202, 15, 102, 0.849);
+    color: white;
+    border-radius: 5px;
+    z-index: 2000;
+    text-align: left !important;
+}
+.errorMsg::before{
+    content: "";
+    width: 0;
+    height: 0;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    border-top: 15px solid rgba(202, 15, 102, 0.849);
+    position: absolute;
+    bottom:-41%;
+    left:10%;
+    z-index: 2000;
+}
+.errorMsg.hidden{
+    display: none;
+}
+
+
+#passLenthIndicator{
+    background-color: green;
+    color: white;
+    border-radius: 5px;
+    font-size: 10px;
+    padding:0;
+    margin-top: 0%;
+    margin-bottom: 5%;
+    max-width: 20rem;
+    margin-left: 10%;
+    margin-right:10%;
+
+    
+}
+#passLenthIndicator.hidden{
+    display: none;
+}

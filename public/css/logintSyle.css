@@ -1,0 +1,236 @@
+:root{
+    --themeColor:linear-gradient(to right, rgb(64, 2, 207), #8b0297);
+}
+body{
+    background-color:rgb(36, 2, 116);
+}
+.minHeight{
+    min-height: 72vh;
+}
+.marginTop{
+    margin-top: 90px;
+}
+.marginBottomReduce{
+    margin-bottom: 20px !important;
+}
+
+.pushRight{
+    position: absolute !important;
+    left:60px !important;
+    /* top: 13px !important; */
+
+}
+
+#particles-js{
+    position: absolute;
+    top:0;
+    height: 100%;
+    width:100%;
+    z-index:0;
+    /* color: #9605b3; */
+}
+
+
+/* styles for stepper form start here */
+.form-control{
+    height: auto;
+}
+main {
+    height: 70vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+  }
+  
+  .stepper {
+    width: 20rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 5%;
+  }
+  
+  .step--1,
+  .step--2,
+  .step--3,
+  .step--4 {
+    width: 5rem;
+    padding: 0.5rem 0;
+    background: #fff;
+    color: rgb(76, 26, 192);
+    text-align: center;
+  }
+  .step--1,
+  .step--2,
+  .step--3 {
+    border-right: 1px solid rgb(122, 16, 209);
+  }
+  
+  .form {
+    background: #fff;
+    text-align: center;
+    position: absolute;
+    width: 25rem;
+    box-shadow: 0.2rem 0.2rem 0.5rem rgba(51, 51, 51, 0.2);
+    display: none;
+    border-radius: 1.25rem;
+    overflow: hidden;
+  }
+  .form--header-container {
+    background:var(--themeColor);
+    color: #fff;
+    height: 6rem;
+    padding: 1rem 0;
+    margin-bottom: 2rem;
+  }
+  
+  .form--header-title {
+    font-size: 1.4rem;
+  }
+  
+  .form--header-text {
+    padding: 0.5rem 0;
+  }
+  
+  input[type='text'] {
+    padding: 0.8rem;
+    margin: auto;
+    margin-top: 0.5rem;
+    width: 20rem;
+    display: block;
+    border-radius: 0.5rem;
+    outline: none;
+    border: 1px solid #5003cc;
+  }
+  input[type='password'] {
+    padding: 0.8rem;
+    margin: auto;
+    margin-top: 0.5rem;
+    width: 20rem;
+    display: block;
+    border-radius: 0.5rem;
+    outline: none;
+    border: 1px solid #5003cc;
+  }
+  
+  
+  .form__btn {
+    background:var(--themeColor);
+    color: #fff;
+    outline: none;
+    border: none;
+    padding: 0.5rem 0.7rem;
+    width: 7rem;
+    margin: 1rem auto;
+    border-radius: 0.9rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    cursor: pointer;
+    transition: transform 0.5s ease-in-out;
+  }
+  .form--message-text {
+    width: 25rem;
+    background: #fff;
+    color: rgb(116, 9, 240);
+    padding: 2rem 1rem;
+    text-align: center;
+    font-size: 1.4rem;
+    box-shadow: 0.2rem 0.2rem 0.5rem rgba(51, 51, 51, 0.2);
+    animation: fadeIn 0.8s;
+    border-radius: 1rem;
+  }
+  
+  .form-active {
+    z-index: 1000;
+    display: block;
+  }
+  .form-active-animate {
+    animation: moveRight 1s;
+  }
+  .form-inactive {
+    display: block;
+    animation: moveLeft 1s;
+  }
+  
+  .step-active {
+    background:var(--themeColor);
+    color: #fff;
+    border: 1px solid rgb(141, 6, 231);
+  }
+  @keyframes moveRight {
+    0% {
+      transform: translateX(-27rem) scale(0.9);
+      opacity: 0;
+    }
+    100% {
+      transform: translateX(0rem) scale(1);
+      opacity: 1;
+    }
+  }
+  
+  @keyframes moveLeft {
+    0% {
+      transform: translateX(0rem) scale(1);
+      opacity: 1;
+    }
+    100% {
+      transform: translateX(27rem) scale(0.9);
+      opacity: 0;
+    }
+  }
+  
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  
+
+  .errorMsg{
+    position: absolute;
+    top:-50%;
+    left:2%;
+    width:90%;
+    padding: 0.5% 5%;
+    background-color: rgba(202, 15, 102, 0.849);
+    color: white;
+    border-radius: 5px;
+    z-index: 2000;
+    text-align: left !important;
+}
+.errorMsg::before{
+    content: "";
+    width: 0;
+    height: 0;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    border-top: 15px solid rgba(202, 15, 102, 0.849);
+    position: absolute;
+    bottom:-41%;
+    left:10%;
+    z-index: 2000;
+}
+.errorMsg.hidden{
+    display: none;
+}
+
+.field-icon {
+  /* float: right; */
+  /* margin-left: -35px;
+  margin-top: 8px; */
+  position: absolute;
+  right: 45px;
+  top:18px;
+
+  
+  z-index: 2;
+}
+
+/* styles for stepper form end here */

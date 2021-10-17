@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.rawgit.com/tonystar/bootstrap-float-label/v4.0.2/bootstrap-float-label.min.css"/>
+    <link rel="stylesheet" href="pagedesginStyles.css">
+    <link rel="stylesheet" href="logintSyle.css">
+
+    
+    <title>Library Management</title>
+</head>
+<body>
+  <%- include('./partials/navbar')  %>
+
+    <div class="container marginTop marginBottomReduce minHeight mb-5" >
+        <div class="row justify-content-center">
+            <div class="col-md-12 col-8 " style="z-index: 100;">
+             <form action="/logIn" method="POST" id="logInForm" name="logInForm">   
+                <main>
+                    <div class="stepper">
+                      <div class="step--1 step-active">Step 1</div>
+                      <div class="step--2">Step 2</div>
+                      <!-- <div class="step--3">Step 3</div>-->
+                      <div class="step--4">Finish</div> 
+                    </div>
+                    <div class="form form-active">
+                      <div class="form--header-container">
+                        <h1 class="form--header-title">
+                          Login Form
+                        </h1>
+              
+                        <p class="form--header-text">
+                          Enter your Username.
+                          <% if (errorMsg) { %>
+                            <p class="text-danger"> 
+                           <%= errorMsg %> 
+                          </p>
+                          <% } %>
+                        </p>
+                      </div>
+                      <!-- <input type="text" placeholder="Username" /> -->
+                      <label class="form-group has-float-label">
+                        <div class="errorMsg hidden" id="unameError"></div>
+                        <input class="form-control" id="uname" name="uname" type="text" placeholder="Username"/ value="<% if (errorMsg) { %><%= unameEntered %><% } %>">
+                        <span class="pushRight">Username</span>
+                      </label>
+                      <!-- <input type="text" placeholder="Email" />
+                      <input type="text" placeholder="Password" /> -->
+                      <button class="form__btn" id="btn-1">Next</button>
+                      </div>
+                    <div class="form">
+                      <div class="form--header-container">
+                        <h1 class="form--header-title">
+                            Login Form
+                        </h1>
+              
+                        <p class="form--header-text">
+                          Enter your Password.
+                         
+                        </p>
+                      </div>
+              
+                      <!-- <input type="text" placeholder="Company Name" />
+                      <input type="text" placeholder="Job title" />
+                      <input type="text" placeholder="Location" /> -->
+                      <label class="form-group has-float-label">
+                        <div class="errorMsg hidden" id="passwordError"></div>
+                        <input class="form-control" name="password" id="password" type="password" placeholder="Password"  />
+                        <span class="pushRight">Password</span>
+                        <i toggle="#password" class="fa fa-fw fa-eye-slash field-icon toggle-password"></i>
+                      </label>
+                      <button class="form__btn" id="btn-2-prev">Previous</button>
+                      <button class="form__btn" id="loginBtn">Log in</button>
+                    </div>
+                    
+                    <div class="form--message"></div>
+                  </main>
+                </form>
+            </div>
+
+        </div>
+    </div>
+    <div id="particles-js">
+
+    </div>
+
+    
+    <%- include('./partials/footer')  %>
+
+    
+
+    
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+
+
+     <!-- particle.js files -->
+    <!-- <script src="particles.js"></script>
+    <script src="app.js"></script> -->
+
+    <script src="pagedesignAnimations.js"></script>
+    <script src="SignUpFormValidation.js"></script>
+    <script src="stepperForm.js"></script>
+</body>
+</html>
