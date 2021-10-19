@@ -9,8 +9,8 @@ const booksRouter=require('./routes/books');
 const authorsRouter=require('./routes/authors');
 
 const app=express();
-const MONGODB_URI='mongodb+srv://zebralib-user:zebralib-user-password@cluster-zebralib.xh777.mongodb.net/library?retryWrites=true&w=majority';
-const PORT = process.env.PORT || 2000;
+const MONGODB_URI='mongodb+srv://jamsheela:jamsheela@jamsheela.zin3w.mongodb.net/jamsheela?retryWrites=true&w=majority';
+const PORT = process.env.PORT || 3000;
 
 const store= new MongoDBStore({
  uri:MONGODB_URI,
@@ -24,7 +24,7 @@ app.use(express.static('public/images'));
 
 //setting up session middleware
 app.use(session({
-    secret:'my session hash key',
+    secret:'my session',
     resave:false,
     saveUninitialized:false,
     store:store

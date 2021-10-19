@@ -14,9 +14,6 @@ const imageStorage=multer.diskStorage({
 
 const authorModel=require('../models/authorModel');
 
-const authorsArray=require('../util/authorsArray');
-
-
 const authorsRouter=express.Router();
 
 authorsRouter.use(bodyParser.urlencoded({extended:true}));
@@ -115,8 +112,7 @@ authorsRouter.route('/updateAuthor/:id')
     .then(()=>{
         console.log('author data updated successfully');
         
-        // const filePath = `../public/images/${pic}`; 
-        // fs.unlinkSync(filePath);
+       
         res.redirect('/authors');
 
     })

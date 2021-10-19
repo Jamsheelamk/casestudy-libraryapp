@@ -3,17 +3,17 @@ html{
     position: relative;
 }
 body{
-    background-color: rgb(36, 2, 116);
+    background-color: rgb(4, 1, 12);
     margin-bottom: 100px;
 }
 .navbar{
-    background :linear-gradient(to right, rgb(36, 2, 116),rgb(36, 2, 116));
+    background :linear-gradient(to right, rgb(6, 0, 19),rgb(5, 0, 17));
 }
 .navbar .dropdown .dropdown-menu{
-    background :linear-gradient(to right, rgb(64, 2, 207), #8b0297);
+    background :linear-gradient(to right, rgb(3, 0, 10), #8b0297);
 }
 .navbar.scrolled{
-    background:rgb(36, 2, 116);
+    background:rgb(17, 17, 17);
     transition: background 700ms;
 }
 .navbar-nav .nav-item .nav-link,.navbar-nav .nav-item .dropdown-item {
@@ -22,11 +22,11 @@ body{
 }
 .navbar-nav .nav-item .nav-link:hover,.navbar-nav .nav-item .dropdown-item:hover {
     color: rgb(255, 255, 255);
-    background :linear-gradient(to right, rgb(49, 14, 90), #1e208d);
+    background :linear-gradient(to right, rgb(6, 0, 14), #00000e);
 }
 .jumbotron#mainjumbo{
     border-radius: 0;
-    background-color: rgb(45, 3, 112);
+    background-color: rgb(4, 0, 10);
 }
 #mainHeading{
     /* text-shadow: 0px 4px 8px rgba(216, 216, 216, 0.6),
@@ -114,10 +114,7 @@ body{
     .articles{
         margin-top:-2rem;
     }
-    /* .imgsize{
-        height: 60%;
-        width: 60%;
-    } */
+    
     hr{
         margin-bottom: 5rem;
     }

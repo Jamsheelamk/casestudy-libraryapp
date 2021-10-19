@@ -5,9 +5,6 @@ const multer=require('multer');
 
 const fs=require('fs');
 
-
-//let booksArray=require('../util/booksArray.json');
-
 const imageStorage=multer.diskStorage({
     destination:(req,file,cb)=>{
         cb(null,'./public/images/');

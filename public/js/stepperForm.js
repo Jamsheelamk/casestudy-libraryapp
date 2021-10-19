@@ -15,11 +15,7 @@ formBtn1.addEventListener('click', function(e) {
   
 });
 
-// Next button listener of form 2
-// formBtnNext2.addEventListener('click', function(e) {
-//   gotoNextForm(formBtnNext2, formBtn3, 2, 3);
-//   e.preventDefault();
-// });
+
 
 // Previous button listener of form 2
 formBtnPrev2.addEventListener('click', function(e) {

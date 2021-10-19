@@ -48,7 +48,7 @@
             <% if (isAdmin) { %>
                 <div class="row justify-content-end">
                     <a href="/books/updateBook/<%= book['_id'] %> "><button class="btn btn-primary mr-4"> Update Book</button></a> 
-                    <form action="/books/deleteBook" method="POST" onsubmit=" return confirm('Are sure you want to Delete this book?')">
+                    <form action="/books/deleteBook" method="POST" onsubmit=" return confirm('Delete?')">
                      <input type="hidden" value="<%= book['_id'] %>" name="bookId">
                      <button class="btn btn-danger mr-4" type="submit"> Delete Book</button>
                     </form>
@@ -64,7 +64,7 @@
     </div>
 
     
-    <%- include('./partials/footer')  %> 
+     
 
     
 
