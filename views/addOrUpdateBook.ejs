@@ -14,7 +14,7 @@
     <title><%= pageTitle %> </title>
 </head>
 <body>
-  <%- include('./partials/navbar')  %>
+  <%- include('./navbar')  %>
 
     <div class="container marginTop marginBottomReduce minHeight mb-5" >
         <div class="row justify-content-center">
@@ -41,7 +41,7 @@
                           Enter Book Name.
                         </p>
                       </div>
-                      <!-- <input type="text" placeholder="Username" /> -->
+                      
                       <label class="form-group has-float-label">
                         <div class="errorMsg hidden" id="bookNameError"></div>
                         <input class="form-control" type="text" name="bookName" id="bookName" placeholder=" Book Name" <% if (editing) { %>
