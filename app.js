@@ -38,9 +38,7 @@ app.get('/',(req,res)=>{
         userId:req.session.userId||false
     });
 });
-app.get('/booksjson',(req,res)=>{
-    res.sendFile('./util/booksArray.json');
-})
+
 app.use('/logIn',loginRouter);
 app.use('/signUp',signupRouter);
 app.use('/books',booksRouter);
@@ -61,5 +59,5 @@ mongoose.connect(MONGODB_URI,{useNewUrlParser: true,useUnifiedTopology: true})
     });
 })
 .catch((err)=>{
-    console.log('failed to conncet to mongoDB atlas',err);
+    console.log('failed to connect',err);
 })

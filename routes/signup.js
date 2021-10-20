@@ -29,11 +29,11 @@ signupRouter.route('/')
     });
     user.save()
     .then(()=>{
-        console.log('user added suuccessfully');
+        console.log('user added');
         res.redirect('/logIn');
     })
     .catch((err)=>{
-        console.log('failed to store user details',err);
+        console.log('failed',err);
     });
 });
 

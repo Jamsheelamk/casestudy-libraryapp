@@ -21,9 +21,9 @@
     <div class="jumbotron text-white " id="mainjumbo" >
         <div class="container paddingcorrection mt-5">
             <div class="d-flex">
-                <span class=" display-1  font-weight-bold" id="mainHeading">Books</div></span>
-                <!-- <span class="ml-auto d-none d-md-flex" id="strangebox"></span> -->
-            </div>
+                <span class=" display-1  font-weight-bold" id="mainHeading">Author</div></span>
+                 <span class="ml-auto d-none d-md-flex" id="strangebox"></span> -->
+             </div>
         </div>
 
     </div>
@@ -35,26 +35,25 @@
         
             <div class="row mt-3 justify-content-center">
                 <div class="col-sm-2 col-8 pt-3 text-center" >
-                    <img src="/<%= book['bookPic'] %> " alt="" class="rounded-circle imgsize" >
+                    <img src="/<%= author['authorPic'] %> " alt="" class="rounded-circle imgsize" >
                 </div>
                 <div class="col-sm-10 col-10 pl-sm-3 blogtext" >
-                    <h3 class="text-capitalize font-weight-bold"><%= book['title'] %> </h3>
-                    <p class="sourcesite"><%= book['author'] %> </p>
-                    <span><%= book['genre'] %>  </span>
-                    <p style="text-align: justify;"><%= book['about'] %> </p>
+                    <h3 class="text-capitalize font-weight-bold"><%= author['name'] %> </h3>
+                    <p class="sourcesite">Major Works: <%= author['authorWorks'] %></p>
+                    
+                    <p style="text-align: justify;"><%= author['about'] %> </p>
                 </div>
-                
+               
             </div>
             <% if (isAdmin) { %>
                 <div class="row justify-content-end">
-                    <a href="/books/updateBook/<%= book['_id'] %> "><button class="btn btn-primary mr-4"> Update Book</button></a> 
-                    <form action="/books/deleteBook" method="POST" onsubmit=" return confirm('Delete?')">
-                     <input type="hidden" value="<%= book['_id'] %>" name="bookId">
-                     <button class="btn btn-danger mr-4" type="submit"> Delete Book</button>
+                    <a href="/authors/updateAuthor/<%= author['_id'] %> "><button class="btn btn-primary mr-4"> Update Author</button></a> 
+                    <form action="/authors/deleteAuthor" method="POST" onsubmit=" return confirm('Delete?')">
+                     <input type="hidden" value="<%= author['_id'] %>" name="authorId">
+                     <button class="btn btn-danger mr-4" type="submit"> Delete Author</button>
                     </form>
-                    
+                     
                  </div>
-             
             <% } %>
             
             <hr/>
@@ -72,4 +71,4 @@
         
     </script>
 </body>
-</html>
+</html>  --> 

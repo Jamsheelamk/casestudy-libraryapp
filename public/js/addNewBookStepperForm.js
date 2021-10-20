@@ -85,7 +85,7 @@ signUpBtn.addEventListener('click', function(e) {
     `;
     setTimeout(()=>{
       get('#addNewBookForm').submit();
-    },2000);
+    },1000);
   }
   
   

@@ -31,7 +31,7 @@ booksRouter.get('/', async(req,res)=>{
         });
     })
     .catch((err)=>{
-        console.log('failed to fetch books from db',err);
+        console.log('failed',err);
     })
     
 });
@@ -71,7 +71,7 @@ booksRouter.route('/addNewBook')
 
     })
     .catch((err)=>{
-        console.log('failed to save book to db',err);
+        console.log('failed',err);
     })
       
 });
@@ -91,7 +91,7 @@ booksRouter.route('/updateBook/:id')
           });
     })
     .catch((err)=>{
-        console.log('failed to fetch  book for update',err);
+        console.log('failed',err);
     })
     
 })
@@ -113,7 +113,7 @@ booksRouter.route('/updateBook/:id')
     
         })
     .then(()=>{
-        console.log('book data updated successfully');
+        console.log('book updated');
         
         // const filePath = `../public/images/${pic}`; 
         // fs.unlinkSync(filePath);
@@ -121,7 +121,7 @@ booksRouter.route('/updateBook/:id')
 
     })
     .catch((err)=>{
-        console.log('failed to update book data to db',err);
+        console.log('failed',err);
     })
     
 
@@ -131,12 +131,12 @@ booksRouter.post('/deleteBook',(req,res)=>{
     const bookId=req.body.bookId;
     bookModel.findByIdAndRemove(bookId)
     .then(()=>{
-        console.log('book deleted successfully');
+        console.log('book deleted');
         res.redirect('/books');
 
     })
     .catch((err)=>{
-        console.log('book delete failed',err);
+        console.log(' failed',err);
     })
 })
 booksRouter.get('/:id',(req,res)=>{
@@ -150,7 +150,7 @@ booksRouter.get('/:id',(req,res)=>{
             userId:req.session.userId||false});
     })
     .catch((err)=>{
-        console.log('failed to fetch single book',err);
+        console.log('failed',err);
     })
     
 });

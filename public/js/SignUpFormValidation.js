@@ -173,9 +173,7 @@ function validate(e){
     }
 }
 
-// if(signUpBtn1){
-//     signUpBtn.addEventListener('click',validate);
-// }
+
 
 
 

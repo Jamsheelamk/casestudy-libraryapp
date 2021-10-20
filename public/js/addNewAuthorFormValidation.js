@@ -99,13 +99,3 @@ function validate(e){
     }
 }
 
-// if(signUpBtn1){
-//     signUpBtn.addEventListener('click',validate);
-// }
-
-
-
-
-
-
-// this is jquery for show/hide password.

@@ -23,7 +23,7 @@ userModel.findOne({uname:uname,password:password})
         res.render('logIn',{
             unameEntered:uname,
             passwordEntered:password,
-            errorMsg:'username password mismatch. No valid user found',
+            errorMsg:'not a valid user',
             isLoggedIn:req.session.isLoggedIn||false,
             isAdmin:req.session.isAdmin||false,
             userId:req.session.userId||false});

@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="logintSyle.css">
 
     
-    <title>Library Management</title>
+    <title>Library</title>
 </head>
 <body>
   <%- include('./partials/navbar')  %>
@@ -21,10 +21,10 @@
              <form action="/logIn" method="POST" id="logInForm" name="logInForm">   
                 <main>
                     <div class="stepper">
-                      <div class="step--1 step-active">Step 1</div>
-                      <div class="step--2">Step 2</div>
+                      <div class="step--1 step-active"></div>
+                      <div class="step--2"></div>
                       <!-- <div class="step--3">Step 3</div>-->
-                      <div class="step--4">Finish</div> 
+                      <div class="step--4"></div> 
                     </div>
                     <div class="form form-active">
                       <div class="form--header-container">
@@ -33,7 +33,7 @@
                         </h1>
               
                         <p class="form--header-text">
-                          Enter your Username.
+                          Enter Username
                           <% if (errorMsg) { %>
                             <p class="text-danger"> 
                            <%= errorMsg %> 
@@ -58,7 +58,7 @@
                         </h1>
               
                         <p class="form--header-text">
-                          Enter your Password.
+                          Enter Password.
                          
                         </p>
                       </div>

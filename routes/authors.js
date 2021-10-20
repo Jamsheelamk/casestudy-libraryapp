@@ -29,10 +29,28 @@ authorsRouter.get('/',(req,res)=>{
             userId:req.session.userId||false});
     })
     .catch((err)=>{
-        console.log('failed to fetch authors data from db',err);
+        console.log('failed',err);
     })
     
 });
+
+// authorsRouter.get('/:id',(req,res)=>{
+    
+//     let id=req.params.id;
+//     authorModel.findById(id)
+//     .then((author)=>{
+//         res.render('singleAuthor',{author,
+//             isLoggedIn:req.session.isLoggedIn||false,
+//             isAdmin:req.session.isAdmin||false,
+//             userId:req.session.userId||false});
+//     })
+//     .catch((err)=>{
+//         console.log('failed',err);
+//     })
+// });
+
+
+
 
 authorsRouter.route('/addNewAuthor')
 .get((req,res)=>{
@@ -63,12 +81,12 @@ authorsRouter.route('/addNewAuthor')
     
     book.save()
     .then(()=>{
-        console.log('author added to db');
+        console.log('author added');
         res.redirect('/authors');
 
     })
     .catch((err)=>{
-        console.log('failed to save author to db',err);
+        console.log('failed',err);
     })
       
 });
@@ -90,7 +108,7 @@ authorsRouter.route('/updateAuthor/:id')
           });
     })
     .catch((err)=>{
-        console.log('failed to fetch  author for update',err);
+        console.log('failed',err);
     })
     
 })
@@ -110,14 +128,14 @@ authorsRouter.route('/updateAuthor/:id')
     
         })
     .then(()=>{
-        console.log('author data updated successfully');
+        console.log('author updated');
         
        
         res.redirect('/authors');
 
     })
     .catch((err)=>{
-        console.log('failed to update author data to db',err);
+        console.log('failed',err);
     })
     
 
@@ -127,12 +145,12 @@ authorsRouter.post('/deleteAuthor',(req,res)=>{
     const authorId=req.body.authorId;
     authorModel.findByIdAndRemove(authorId)
     .then(()=>{
-        console.log('author document deleted successfully');
+        console.log('author deleted');
         res.redirect('/authors');
 
     })
     .catch((err)=>{
-        console.log('author deletion failed',err);
+        console.log('failed',err);
     })
 })
 
