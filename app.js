@@ -30,7 +30,7 @@ app.use(session({
     store:store
 }));
 
-//main route
+
 app.get('/',(req,res)=>{
     res.render('index',{
         isLoggedIn:req.session.isLoggedIn||false,
@@ -51,11 +51,11 @@ app.get('/logOut',(req,res)=>{
 
 
 
-// app serving in a perticular port
+
 mongoose.connect(MONGODB_URI,{useNewUrlParser: true,useUnifiedTopology: true})
 .then(()=>{
     app.listen(PORT,()=>{
-        console.log(`app serving at port ${PORT}`);
+        console.log(` server ready at port ${PORT}`);
     });
 })
 .catch((err)=>{

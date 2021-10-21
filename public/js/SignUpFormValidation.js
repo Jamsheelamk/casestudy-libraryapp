@@ -8,7 +8,7 @@ const errorFlags={
 function get(str){
     return document.querySelector(str);
 }
-const address=get('#address');
+// const address=get('#address');
 const dob=get('#dob');
 const uname=get('#uname');
 const unameError=get('#unameError');
@@ -89,7 +89,7 @@ if(uname){
         let unameVal=uname.value.trim();
         if(unameVal.length<6){
             errorFlags.unameErrFlag=true;
-            unameError.innerHTML='Username length should be >=6';
+            unameError.innerHTML='Username length should be >5';
             unameError.classList.remove('hidden');
 
         }
@@ -150,17 +150,14 @@ function errMsgRemove(el){
 if(name){
     errMsgRemove(name);
 }
-if(address){
-    errMsgRemove(address);
-}
 if(dob){
     errMsgRemove(dob);
 }
+if(address){
+    errMsgRemove(address);
+}
 
 
-
-
-// validate function prevent form from submiting if any of the flags is true
 function validate(e){
     for(let flag in errorFlags){
         if(errorFlags[flag]===true){
@@ -178,7 +175,6 @@ function validate(e){
 
 
 const loginBtn1 =get('#loginBtn');
-// preventing login from submisssion on password error
 if(loginBtn1){
     loginBtn1.addEventListener('click',function(e){
         if(errorFlags[password]===true){
@@ -190,7 +186,7 @@ if(loginBtn1){
 
 
 
-// this is jquery for show/hide password.
+
 
 $(".toggle-password").click(function() {
 

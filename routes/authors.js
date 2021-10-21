@@ -34,20 +34,6 @@ authorsRouter.get('/',(req,res)=>{
     
 });
 
-// authorsRouter.get('/:id',(req,res)=>{
-    
-//     let id=req.params.id;
-//     authorModel.findById(id)
-//     .then((author)=>{
-//         res.render('singleAuthor',{author,
-//             isLoggedIn:req.session.isLoggedIn||false,
-//             isAdmin:req.session.isAdmin||false,
-//             userId:req.session.userId||false});
-//     })
-//     .catch((err)=>{
-//         console.log('failed',err);
-//     })
-// });
 
 
 
@@ -149,10 +135,26 @@ authorsRouter.post('/deleteAuthor',(req,res)=>{
         res.redirect('/authors');
 
     })
-    .catch((err)=>{
-        console.log('failed',err);
-    })
+    // .catch((err)=>{
+    //     console.log('failed',err);
+    // });
 })
+
+
+authorsRouter.get('/:id',(req,res)=>{
+    
+    let id=req.params.id;
+    authorModel.findById(id)
+    .then((book)=>{
+        res.render('singleAuthor',{book,
+            isLoggedIn:req.session.isLoggedIn||false,
+            isAdmin:req.session.isAdmin||false,
+            userId:req.session.userId||false});
+    });
+    
+});
+
+
 
 
 

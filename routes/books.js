@@ -115,8 +115,6 @@ booksRouter.route('/updateBook/:id')
     .then(()=>{
         console.log('book updated');
         
-        // const filePath = `../public/images/${pic}`; 
-        // fs.unlinkSync(filePath);
         res.redirect('/books');
 
     })

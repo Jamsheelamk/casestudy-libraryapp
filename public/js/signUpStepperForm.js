@@ -84,7 +84,7 @@ signUpBtn.addEventListener('click', function(e) {
     `;
     setTimeout(()=>{
       get('#signUpForm').submit();
-    },1000);
+    },500);
   }
   
   

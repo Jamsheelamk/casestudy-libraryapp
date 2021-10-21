@@ -1,5 +1,5 @@
 :root{
-    --themeColor:linear-gradient(to right, rgb(36, 167, 228), #33aedf);
+    --themeColor:linear-gradient(to right, rgb(245, 190, 10), #ecb910);
 }
 body{
     background-color:rgb(23, 23, 24);
@@ -106,14 +106,10 @@ main {
   }
   .form--message-text {
     width: 25rem;
-    background: #fff;
     color: rgb(34, 193, 233);
     padding: 2rem 1rem;
     text-align: center;
     font-size: 1rem;
-    box-shadow: 0.2rem 0.2rem 0.5rem rgba(51, 51, 51, 0.2);
-    animation: fadeIn 0.8s;
-    border-radius: 1rem;
   }
   
   .form-active {
@@ -128,38 +124,14 @@ main {
     animation: moveLeft 1s;
   }
   
-  @keyframes moveRight {
-    0% {
-      transform: translateX(-27rem) scale(0.9);
-      opacity: 0;
-    }
-    100% {
-      transform: translateX(0rem) scale(1);
-      opacity: 1;
-    }
-  }
-  
-
-  
-  @keyframes fadeIn {
-    0% {
-      opacity: 0;
-    }
-    100% {
-      opacity: 1;
-    }
-  }
-  
 
   .errorMsg{
-    position: absolute;
+     position: absolute;
     top:-50%;
     left:2%;
     width:90%;
     padding: 0.5% 5%;
     color: rgb(233, 33, 33);
-    border-radius: 5px;
-    z-index: 2000;
     text-align: left !important;
 }
 .errorMsg::before{
