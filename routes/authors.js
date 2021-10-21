@@ -134,25 +134,25 @@ authorsRouter.post('/deleteAuthor',(req,res)=>{
         console.log('author deleted');
         res.redirect('/authors');
 
-    })
+    });
     // .catch((err)=>{
     //     console.log('failed',err);
     // });
-})
-
-
-authorsRouter.get('/:id',(req,res)=>{
-    
-    let id=req.params.id;
-    authorModel.findById(id)
-    .then((book)=>{
-        res.render('singleAuthor',{book,
-            isLoggedIn:req.session.isLoggedIn||false,
-            isAdmin:req.session.isAdmin||false,
-            userId:req.session.userId||false});
-    });
-    
 });
+
+
+// authorsRouter.get('/:id',(req,res)=>{
+    
+//     let id=req.params.id;
+//     authorModel.findById(id)
+//     .then(()=>{
+//         res.render('singleAuthor',{book,
+//             isLoggedIn:req.session.isLoggedIn||false,
+//             isAdmin:req.session.isAdmin||false,
+//             userId:req.session.userId||false});
+//     });
+    
+// });
 
 
 
